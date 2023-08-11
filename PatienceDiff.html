@@ -47,9 +47,9 @@ function calcDiff(diffNotPlus) {
   var diffLines = "";
   diff.lines.forEach((o) => {
     if (o.bIndex < 0 && o.moved) {
-      diffLines += "<span class=bmove>";
-    } else if (o.moved) {
       diffLines += "<span class=amove>";
+    } else if (o.moved) {
+      diffLines += "<span class=bmove>";
     } else if (o.aIndex < 0) {
       diffLines += "<span class=bdiff>";
     } else if (o.bIndex < 0) {
