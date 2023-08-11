@@ -42,13 +42,13 @@ function calcDiff(diffNotPlus) {
   var diffLines = "";
   diff.lines.forEach((o) => {
     if (o.bIndex < 0 && o.moved) {
-      diffLines += "<span style='background-color: palegreen;'>";
+      diffLines += "<span style='background-color: #dfd;'>";
     } else if (o.moved) {
-      diffLines += "<span style='background-color: pink;'>";
+      diffLines += "<span style='background-color: #fdd;'>";
     } else if (o.aIndex < 0) {
-      diffLines += "<span style='background-color: lightpink;'>";
+      diffLines += "<span style='background-color: #fee;'>";
     } else if (o.bIndex < 0) {
-      diffLines += "<span style='background-color: yellowgreen;'>";
+      diffLines += "<span style='background-color: #efe;'>";
     } else {
       diffLines += "<span>";
     }
@@ -66,8 +66,8 @@ function autocalc() {
 </script>
 <a href='https://github.com/sleekweasel/PatienceDiff'>https://github.com/sleekweasel/PatienceDiff</a> <a href='https://github.com/sleekweasel/PatienceDiff/deployments'>https://github.com/sleekweasel/PatienceDiff/deployments</a>
 <div>
-<textarea id="aLines" style="width:25%; height:95%" oninput="autocalc()"></textarea>
-<textarea id="bLines" style="width:25%; height:95%" oninput="autocalc()"></textarea>
+<textarea id="aLines" style="background-color: #efe; width:25%; height:95%" oninput="autocalc()"></textarea>
+<textarea id="bLines" style="background-color: #fee; width:25%; height:95%" oninput="autocalc()"></textarea>
 <div style="position:absolute; top:25%; left:55%">
   <input type="radio" onclick="calcDiff(true)" name="auto" id="checkdiff">
   <button type="button" onclick="calcDiff(true)">=&gt; Diff =&gt;</button>
