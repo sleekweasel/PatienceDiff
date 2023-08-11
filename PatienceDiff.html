@@ -30,10 +30,10 @@ function init() {
   document.getElementById("bLines").value = bLines;
 }
 
-function calcDiff(diffVsPlus) {
+function calcDiff(diffNotPlus) {
   var a = document.getElementById("aLines").value.split("\n");
   var b = document.getElementById("bLines").value.split("\n");
-  if (diffVsPlus) {
+  if (diffNotPlus) {
     var diff = patienceDiff(a , b);
   } else {
     var diff = patienceDiffPlus(a , b);
@@ -58,13 +58,27 @@ function calcDiff(diffVsPlus) {
   document.getElementById("diff").innerHTML = diffLines;
 }
 
+function autocalc() {
+  if (document.getElementById("checkdiff").checked) { calcDiff(true); }
+  else if (document.getElementById("checkdiffplus").checked ) { calcDiff(false); }
+}
+
 </script>
 <a href='https://github.com/sleekweasel/PatienceDiff'>https://github.com/sleekweasel/PatienceDiff</a>
 <div>
-<textarea id="aLines" style="width:25%; height:95%"></textarea>
-<textarea id="bLines" style="width:25%; height:95%"></textarea>
-<button type="button" onclick="calcDiff(true)" style="position:absolute; top:25%; left:55%">=> Diff =></button>
-<button type="button" onclick="calcDiff(false)" style="position:absolute; top:35%; left:55%">=> DiffPlus =></button>
+<textarea id="aLines" style="width:25%; height:95%" oninput="autocalc()"></textarea>
+<textarea id="bLines" style="width:25%; height:95%" oninput="autocalc()"></textarea>
+<div style="position:absolute; top:25%; left:55%">
+  <input type="radio" onclick="calcDiff(true)" name="auto" id="checkdiff">
+  <button type="button" onclick="calcDiff(true)">=&gt; Diff =&gt;</button>
+</div>
+<div style="position:absolute; top:35%; left:55%">
+  <input type="radio" onclick="calcDiff(false)" name="auto" id="checkdiffplus">
+  <button type="button" onclick="calcDiff(false)">=&gt; DiffPlus =&gt;</button>
+</div>
+<div style="position:absolute; top:45%; left:55%">
+  <input type="radio" onclick="calcDiff(false)" name="auto" id="checkdiffplus"> no auto
+</div>
 <div id="diff" style="border-style: solid; white-space: pre; float:right; width:33%; height:95%;"></div>
 </div>
 
