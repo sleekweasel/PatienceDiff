@@ -27,7 +27,9 @@ where:<br>
   * lineCountMoved = the number of lines, outside the Longest Common Subsequence, that were likely moved.
 
 # Example
-Simply download the PatienceDiff.js file which contains the complete algorithm, and PatienceDiff.html which exemplifies how to use the algorithm.  Then open PatienceDiff.html in a browser, and press the "=> Diff =>" button to calculate the difference between the two blocks of text.
+Run in your browser: https://sleekweasel.github.io/PatienceDiff/PatienceDiff.html
+
+Or download the PatienceDiff.js file which contains the complete algorithm, and PatienceDiff.html which exemplifies how to use the algorithm.  Then open PatienceDiff.html in a browser, and press the "=> Diff =>" button to calculate the difference between the two blocks of text.
 
 ![Results of javascript Patience Diff](PatienceDiff.png)
 
