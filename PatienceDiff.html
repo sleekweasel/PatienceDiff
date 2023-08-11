@@ -57,7 +57,7 @@ function calcDiff(diffNotPlus) {
     } else {
       diffLines += "<span class=nodiff>";
     }
-    diffLines += o.line + "</span>\n";
+    diffLines += o.line.replace("<", "&lt;") + "</span>\n";
   });
   
   document.getElementById("diff").innerHTML = diffLines;
