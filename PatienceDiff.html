@@ -55,7 +55,7 @@ function calcDiff(diffNotPlus) {
     } else if (o.bIndex < 0) {
       diffLines += "<span class=bdiff>";
     } else {
-      diffLines += "<span>";
+      diffLines += "<span class=nodiff>";
     }
     diffLines += o.line + "</span>\n";
   });
