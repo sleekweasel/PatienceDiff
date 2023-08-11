@@ -3,6 +3,10 @@ A concise javascript implementation of the **Patience Diff** algorithm
 
 Plus, an implementation of a new algorithm dubbed **Patience Diff Plus**, which in addition to the usual Patience Diff, identifies lines that moved.
 
+# Live Github-hosted example:
+
+https://sleekweasel.github.io/PatienceDiff/PatienceDiff.html
+
 # Interface
 ### PatienceDiff(aLines, bLines)  &  PatienceDiffPlus(aLines, bLines)
 
