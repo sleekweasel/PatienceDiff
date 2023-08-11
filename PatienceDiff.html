@@ -8,7 +8,6 @@
 div {
   font-family: Courier;
   font-size: 12;
-  white-space: pre;
 }
 
 textarea {
@@ -43,20 +42,20 @@ function calcDiff(diffVsPlus) {
   var diffLines = "";
   diff.lines.forEach((o) => {
     if (o.bIndex < 0 && o.moved) {
-      diffLines += "<span style='color: palegreen;'>";
+      diffLines += "<span style='background-color: palegreen;'>";
     } else if (o.moved) {
-      diffLines += "<span style='color: pink;'>";
+      diffLines += "<span style='background-color: pink;'>";
     } else if (o.aIndex < 0) {
-      diffLines += "<span style='color: lightpink;'>";
+      diffLines += "<span style='background-color: lightpink;'>";
     } else if (o.bIndex < 0) {
-      diffLines += "<span style='color: yellowgreen;'>";
+      diffLines += "<span style='background-color: yellowgreen;'>";
     } else {
       diffLines += "<span>";
     }
     diffLines += o.line + "</span>\n";
   });
   
-  document.getElementById("diff").value = diffLines;
+  document.getElementById("diff").innerHTML = diffLines;
 }
 
 </script>
@@ -66,7 +65,7 @@ function calcDiff(diffVsPlus) {
 <textarea id="bLines" style="width:25%; height:95%"></textarea>
 <button type="button" onclick="calcDiff(true)" style="position:absolute; top:25%; left:55%">=> Diff =></button>
 <button type="button" onclick="calcDiff(false)" style="position:absolute; top:35%; left:55%">=> DiffPlus =></button>
-<div id="diff" style="float:right; width:33%; height:95%;"></div>
+<div id="diff" style="border-style: solid; white-space: pre; float:right; width:33%; height:95%;"></div>
 </div>
 
 </body>
