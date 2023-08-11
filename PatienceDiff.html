@@ -33,6 +33,7 @@ var bLines = `#include <stdio.h>\n\nint fib(int n)\n{\n    if(n > 2)\n    {\n   
 function init() {
   document.getElementById("aLines").value = aLines;
   document.getElementById("bLines").value = bLines;
+  autocalc();
 }
 
 function calcDiff(diffNotPlus) {
@@ -65,26 +66,19 @@ function calcDiff(diffNotPlus) {
 
 function autocalc() {
   if (document.getElementById("checkdiff").checked) { calcDiff(true); }
-  else if (document.getElementById("checkdiffplus").checked ) { calcDiff(false); }
+  else if (document.getElementById("checkplus").checked ) { calcDiff(false); }
 }
 
 </script>
 <a href='https://github.com/sleekweasel/PatienceDiff'>https://github.com/sleekweasel/PatienceDiff</a> <a href='https://github.com/sleekweasel/PatienceDiff/deployments'>https://github.com/sleekweasel/PatienceDiff/deployments</a>
+<br>
+  <input type="radio" name="auto" id="checkdiff" onclick="calcDiff(true)"><button type="button" onclick="calcDiff(true)">=&gt; Diff =&gt;</button>
+  <input type="radio" name="auto" id="checkplus" onclick="calcDiff(false)" checked><button type="button" onclick="calcDiff(false)">=&gt; DiffPlus =&gt;</button>
+  <input type="radio" name="auto" id="checknone"> no auto
 <div>
-<textarea id="aLines" class=adiff style="width:25%; height:95%" oninput="autocalc()"></textarea>
-<textarea id="bLines" class=bdiff style="width:25%; height:95%" oninput="autocalc()"></textarea>
-<div style="position:absolute; top:25%; left:55%">
-  <input type="radio" onclick="calcDiff(true)" name="auto" id="checkdiff">
-  <button type="button" onclick="calcDiff(true)">=&gt; Diff =&gt;</button>
-</div>
-<div style="position:absolute; top:35%; left:55%">
-  <input type="radio" onclick="calcDiff(false)" name="auto" id="checkdiffplus" checked>
-  <button type="button" onclick="calcDiff(false)">=&gt; DiffPlus =&gt;</button>
-</div>
-<div style="position:absolute; top:45%; left:55%">
-  <input type="radio" onclick="calcDiff(false)" name="auto" id="checkdiffplus"> no auto
-</div>
-<div id="diff" style="overflow:auto; border-style: solid; white-space: pre; float:right; width:33%; height:95%;"></div>
+<textarea id="aLines" class=adiff style="width:33%; height:95%" oninput="autocalc()"></textarea>
+<div id="diff" style="display: inline-block; overflow:auto; border-style: solid; white-space: pre; width:33%; height:95%;"></div>
+<textarea id="bLines" class=bdiff style="width:33%; height:95%" oninput="autocalc()"></textarea>
 </div>
 
 </body>
