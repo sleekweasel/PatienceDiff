@@ -54,7 +54,7 @@ function patienceDiff( aLines, bLines, diffPlusFlag ) {
 
 		for ( let i = lo; i <= hi + 1 - unit; i ++ ) {
 
-			let line = arr.slice( i, i + unit );
+			let line = arr.slice( i, i + unit ).join("\n");
       
 			if ( lineMap.has( line ) ) {
 
